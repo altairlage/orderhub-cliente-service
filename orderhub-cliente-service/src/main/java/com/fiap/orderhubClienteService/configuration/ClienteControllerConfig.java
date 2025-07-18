@@ -1,4 +1,4 @@
-package com.fiap.orderhubClientService.configuration;
+package com.fiap.orderhubClienteService.configuration;
 
 import br.com.orderhub.core.controller.ClienteController;
 import br.com.orderhub.core.interfaces.IClienteGateway;

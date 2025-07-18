@@ -1,11 +1,11 @@
-package com.fiap.orderhubClientService.utils;
+package com.fiap.orderhubClienteService.utils;
 
 import br.com.orderhub.core.domain.entities.Cliente;
 import br.com.orderhub.core.dto.clientes.ClienteDTO;
-import com.fiap.orderhubClientService.dtos.ClienteApiRequestDto;
-import com.fiap.orderhubClientService.dtos.ClienteApiResponseDto;
-import com.fiap.orderhubClientService.mapper.ClienteApiDtoMapper;
-import com.fiap.orderhubClientService.persistence.ClienteEntity;
+import com.fiap.orderhubClienteService.dtos.ClienteApiRequestDto;
+import com.fiap.orderhubClienteService.dtos.ClienteApiResponseDto;
+import com.fiap.orderhubClienteService.mapper.ClienteApiDtoMapper;
+import com.fiap.orderhubClienteService.persistence.ClienteEntity;
 
 public abstract class ClienteServiceUtilsTest {
 

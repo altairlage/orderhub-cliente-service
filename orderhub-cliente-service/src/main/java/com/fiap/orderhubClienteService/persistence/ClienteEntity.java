@@ -1,4 +1,4 @@
-package com.fiap.orderhubClientService.persistence;
+package com.fiap.orderhubClienteService.persistence;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

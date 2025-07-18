@@ -1,9 +1,9 @@
-package com.fiap.orderhubClientService.mapper;
+package com.fiap.orderhubClienteService.mapper;
 
 import br.com.orderhub.core.dto.clientes.ClienteDTO;
 import br.com.orderhub.core.dto.clientes.CriarClienteDTO;
-import com.fiap.orderhubClientService.dtos.ClienteApiRequestDto;
-import com.fiap.orderhubClientService.dtos.ClienteApiResponseDto;
+import com.fiap.orderhubClienteService.dtos.ClienteApiRequestDto;
+import com.fiap.orderhubClienteService.dtos.ClienteApiResponseDto;
 
 public class ClienteApiDtoMapper {
     public static ClienteApiResponseDto clienteDtoToResponseDto(ClienteDTO clienteDTO) {

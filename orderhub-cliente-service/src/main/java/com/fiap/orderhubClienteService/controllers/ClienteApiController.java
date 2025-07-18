@@ -1,12 +1,11 @@
-package com.fiap.orderhubClientService.controllers;
+package com.fiap.orderhubClienteService.controllers;
 
 import br.com.orderhub.core.controller.ClienteController;
 import br.com.orderhub.core.dto.clientes.ClienteDTO;
 import br.com.orderhub.core.dto.clientes.CriarClienteDTO;
-import br.com.orderhub.core.exceptions.ClienteNaoEncontradoException;
-import com.fiap.orderhubClientService.dtos.ClienteApiRequestDto;
-import com.fiap.orderhubClientService.dtos.ClienteApiResponseDto;
-import com.fiap.orderhubClientService.mapper.ClienteApiDtoMapper;
+import com.fiap.orderhubClienteService.dtos.ClienteApiRequestDto;
+import com.fiap.orderhubClienteService.dtos.ClienteApiResponseDto;
+import com.fiap.orderhubClienteService.mapper.ClienteApiDtoMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

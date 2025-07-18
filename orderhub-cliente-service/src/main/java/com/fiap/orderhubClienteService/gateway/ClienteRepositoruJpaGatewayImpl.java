@@ -1,11 +1,11 @@
-package com.fiap.orderhubClientService.gateway;
+package com.fiap.orderhubClienteService.gateway;
 
 import br.com.orderhub.core.domain.entities.Cliente;
 import br.com.orderhub.core.exceptions.ClienteNaoEncontradoException;
 import br.com.orderhub.core.interfaces.IClienteGateway;
-import com.fiap.orderhubClientService.mapper.ClienteEntityMapper;
-import com.fiap.orderhubClientService.persistence.ClienteEntity;
-import com.fiap.orderhubClientService.persistence.ClienteRepository;
+import com.fiap.orderhubClienteService.mapper.ClienteEntityMapper;
+import com.fiap.orderhubClienteService.persistence.ClienteEntity;
+import com.fiap.orderhubClienteService.persistence.ClienteRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

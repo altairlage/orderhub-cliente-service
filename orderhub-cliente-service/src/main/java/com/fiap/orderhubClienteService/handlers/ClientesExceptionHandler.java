@@ -1,4 +1,4 @@
-package com.fiap.orderhubClientService.handlers;
+package com.fiap.orderhubClienteService.handlers;
 
 import br.com.orderhub.core.exceptions.ClienteNaoEncontradoException;
 import br.com.orderhub.core.exceptions.CpfJaCadastradoException;

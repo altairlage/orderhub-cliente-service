@@ -1,7 +1,7 @@
-package com.fiap.orderhubClientService.mapper;
+package com.fiap.orderhubClienteService.mapper;
 
 import br.com.orderhub.core.domain.entities.Cliente;
-import com.fiap.orderhubClientService.utils.ClienteServiceUtilsTest;
+import com.fiap.orderhubClienteService.utils.ClienteServiceUtilsTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

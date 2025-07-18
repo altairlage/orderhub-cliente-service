@@ -1,7 +1,7 @@
-package com.fiap.orderhubClientService.mapper;
+package com.fiap.orderhubClienteService.mapper;
 
 import br.com.orderhub.core.domain.entities.Cliente;
-import com.fiap.orderhubClientService.persistence.ClienteEntity;
+import com.fiap.orderhubClienteService.persistence.ClienteEntity;
 
 public class ClienteEntityMapper {
     public ClienteEntityMapper() {}

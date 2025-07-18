@@ -1,4 +1,4 @@
-package com.fiap.orderhubClientService.dtos;
+package com.fiap.orderhubClienteService.dtos;
 
 public record ClienteApiRequestDto(
         String nome,

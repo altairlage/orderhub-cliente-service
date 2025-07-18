@@ -1,4 +1,4 @@
-package com.fiap.orderhubClientService;
+package com.fiap.orderhubClienteService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
