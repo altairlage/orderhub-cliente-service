@@ -1,0 +1,4 @@
+com\fiap\orderhubClienteService\OrderhubClientServiceApplicationTests.class
+com\fiap\orderhubClienteService\mapper\ClienteApiDtoMapperTest.class
+com\fiap\orderhubClienteService\utils\ClienteServiceUtilsTest.class
+com\fiap\orderhubClienteService\mapper\ClienteEntityMapperTest.class
