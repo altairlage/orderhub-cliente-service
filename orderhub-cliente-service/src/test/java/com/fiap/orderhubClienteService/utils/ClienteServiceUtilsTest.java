@@ -13,7 +13,7 @@ public abstract class ClienteServiceUtilsTest {
         ClienteDTO clienteDto = new ClienteDTO(
                 1L,
                 "Jorge",
-                "123.456.789.10",
+                "123.456.789-09",
                 "07/12/2015",
                 "Rua Teste, 123, Bairro XYZ",
                 "(99) 99999-9999",
@@ -27,7 +27,7 @@ public abstract class ClienteServiceUtilsTest {
     public static ClienteApiRequestDto criaClienteApiRequestDto() {
         ClienteApiRequestDto requestDto = new ClienteApiRequestDto(
                 "Jorge",
-                "123.456.789.10",
+                "123.456.789-09",
                 "07/12/2015",
                 "Rua Teste, 123, Bairro XYZ",
                 "(99) 99999-9999",
@@ -42,7 +42,7 @@ public abstract class ClienteServiceUtilsTest {
         return new ClienteEntity(
                 1L,
                 "Jorge",
-                "123.456.789.10",
+                "123.456.789-09",
                 "07/12/2015",
                 "Rua Teste, 123, Bairro XYZ",
                 "(99) 99999-9999",
@@ -55,7 +55,20 @@ public abstract class ClienteServiceUtilsTest {
         return new Cliente(
                 1L,
                 "Jorge",
-                "123.456.789.10",
+                "123.456.789-09",
+                "07/12/2015",
+                "Rua Teste, 123, Bairro XYZ",
+                "(99) 99999-9999",
+                "email@email.com",
+                "Cartao de Credito"
+        );
+    }
+
+    public static ClienteDTO criaClienteDto() {
+        return new ClienteDTO(
+                1L,
+                "Jorge",
+                "123.456.789-09",
                 "07/12/2015",
                 "Rua Teste, 123, Bairro XYZ",
                 "(99) 99999-9999",
