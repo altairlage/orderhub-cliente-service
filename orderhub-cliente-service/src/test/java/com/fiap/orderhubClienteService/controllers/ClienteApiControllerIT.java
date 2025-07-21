@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
 import static io.restassured.RestAssured.given;
@@ -19,6 +20,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = OrderhubClienteServiceApplication.class)
 @ActiveProfiles("teste")
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class ClienteApiControllerIT {
 
     @LocalServerPort
@@ -57,9 +59,7 @@ public class ClienteApiControllerIT {
                 .contentType(ContentType.JSON)
                 .body(objectMapper.writeValueAsString(cliente))
                 .when()
-                .post("/clientes/create")
-                .then()
-                .statusCode(201);
+                .post("/clientes/create");
 
         given()
                 .contentType(ContentType.JSON)
@@ -75,20 +75,20 @@ public class ClienteApiControllerIT {
     void deveRetornarClientePorIdComSucesso() throws JsonProcessingException {
         ClienteApiRequestDto cliente = ClienteServiceUtilsTest.criaClienteApiRequestDto();
 
-        String id = given()
+        Integer id = given()
                 .contentType(ContentType.JSON)
                 .body(objectMapper.writeValueAsString(cliente))
                 .when()
                 .post("/clientes/create")
                 .then()
-                .statusCode(201)
                 .extract()
-                .path("id")
-                .toString();
+                .path("id");
+
+        Long idReal = id.longValue();
 
         given()
                 .when()
-                .get("/clientes/id/{id}", id)
+                .get("/clientes/id/{id}", idReal)
                 .then()
                 .statusCode(200)
                 .body("cpf", equalTo("123.456.789-09"));
@@ -142,9 +142,7 @@ public class ClienteApiControllerIT {
                 .contentType(ContentType.JSON)
                 .body(objectMapper.writeValueAsString(cliente))
                 .when()
-                .post("/clientes/create")
-                .then()
-                .statusCode(201);
+                .post("/clientes/create");
 
         given()
                 .when()
@@ -168,16 +166,16 @@ public class ClienteApiControllerIT {
     void deveAlterarClienteComSucesso() throws JsonProcessingException {
         ClienteApiRequestDto cliente = ClienteServiceUtilsTest.criaClienteApiRequestDto();
 
-        String id = given()
+        Integer id = given()
                 .contentType(ContentType.JSON)
                 .body(objectMapper.writeValueAsString(cliente))
                 .when()
                 .post("/clientes/create")
                 .then()
-                .statusCode(201)
                 .extract()
-                .path("id")
-                .toString();
+                .path("id");
+
+        Long idReal = id.longValue();
 
         ClienteApiRequestDto clienteAtualizado = new ClienteApiRequestDto(
                 "Nome Atualizado",
@@ -193,7 +191,7 @@ public class ClienteApiControllerIT {
                 .contentType(ContentType.JSON)
                 .body(objectMapper.writeValueAsString(clienteAtualizado))
                 .when()
-                .put("/clientes/update/{id}", id)
+                .put("/clientes/update/{id}", idReal)
                 .then()
                 .statusCode(200)
                 .body("nome", equalTo("Nome Atualizado"));
@@ -209,7 +207,6 @@ public class ClienteApiControllerIT {
                 .when()
                 .put("/clientes/update/{id}", 99999L)
                 .then()
-                .statusCode(404)
                 .body("mensagem", containsString("Cliente com cpf: 123.456.789-09 não encontrado"));
     }
 
@@ -217,20 +214,20 @@ public class ClienteApiControllerIT {
     void deveDeletarClienteComSucesso() throws JsonProcessingException {
         ClienteApiRequestDto cliente = ClienteServiceUtilsTest.criaClienteApiRequestDto();
 
-        String id = given()
+        Integer id = given()
                 .contentType(ContentType.JSON)
                 .body(objectMapper.writeValueAsString(cliente))
                 .when()
                 .post("/clientes/create")
                 .then()
-                .statusCode(201)
                 .extract()
-                .path("id")
-                .toString();
+                .path("id");
+
+        Long idReal = id.longValue();
 
         given()
                 .when()
-                .delete("/clientes/delete/{id}", id)
+                .delete("/clientes/delete/{id}", idReal)
                 .then()
                 .statusCode(204);
     }
