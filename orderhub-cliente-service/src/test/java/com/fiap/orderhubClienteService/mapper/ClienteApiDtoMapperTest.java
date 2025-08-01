@@ -14,7 +14,7 @@ class ClienteApiDtoMapperTest {
         ClienteApiResponseDto response = ClienteServiceUtilsTest.criaClienteApiResponseDto();
 
         assertEquals("Jorge", response.nome());
-        assertEquals("123.456.789.10", response.cpf());
+        assertEquals("123.456.789-09", response.cpf());
         assertEquals("07/12/2015", response.dataNascimento());
         assertEquals("Rua Teste, 123, Bairro XYZ", response.endereco());
         assertEquals("(99) 99999-9999", response.numeroContato());
@@ -27,7 +27,7 @@ class ClienteApiDtoMapperTest {
         ClienteApiResponseDto response = ClienteServiceUtilsTest.criaClienteApiResponseDto();
 
         assertEquals("Jorge", response.nome());
-        assertEquals("123.456.789.10", response.cpf());
+        assertEquals("123.456.789-09", response.cpf());
         assertEquals("07/12/2015", response.dataNascimento());
         assertEquals("Rua Teste, 123, Bairro XYZ", response.endereco());
         assertEquals("(99) 99999-9999", response.numeroContato());
@@ -44,7 +44,7 @@ class ClienteApiDtoMapperTest {
 
         assertNotNull(dto);
         assertEquals("Jorge", dto.nome());
-        assertEquals("123.456.789.10", dto.cpf());
+        assertEquals("123.456.789-09", dto.cpf());
         assertEquals("07/12/2015", dto.dataNascimento());
         assertEquals("Rua Teste, 123, Bairro XYZ", dto.endereco());
         assertEquals("(99) 99999-9999", dto.numeroContato());

@@ -14,7 +14,7 @@ class ClienteEntityMapperTest {
         Cliente cliente = ClienteEntityMapper.entityToDomain(ClienteServiceUtilsTest.criaClienteEntity());
 
         assertEquals("Jorge", cliente.getNome());
-        assertEquals("123.456.789.00", cliente.getCpf());
+        assertEquals("123.456.789-09", cliente.getCpf());
         assertEquals("07/12/2015", cliente.getDataNascimento());
         assertEquals("Rua Teste, 123, Bairro XYZ", cliente.getEndereco());
         assertEquals("(99) 99999-9999", cliente.getNumeroContato());
@@ -27,7 +27,7 @@ class ClienteEntityMapperTest {
         ClienteEntity cliente = ClienteEntityMapper.domainToEntity(ClienteServiceUtilsTest.criaCliente());
 
         assertEquals("Jorge", cliente.getNome());
-        assertEquals("123.456.789.10", cliente.getCpf());
+        assertEquals("123.456.789-09", cliente.getCpf());
         assertEquals("07/12/2015", cliente.getDataNascimento());
         assertEquals("Rua Teste, 123, Bairro XYZ", cliente.getEndereco());
         assertEquals("(99) 99999-9999", cliente.getNumeroContato());
