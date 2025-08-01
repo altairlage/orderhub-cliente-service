@@ -6,6 +6,7 @@ import br.com.orderhub.core.dto.clientes.CriarClienteDTO;
 import com.fiap.orderhubClienteService.dtos.ClienteApiRequestDto;
 import com.fiap.orderhubClienteService.dtos.ClienteApiResponseDto;
 import com.fiap.orderhubClienteService.mapper.ClienteApiDtoMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,7 +54,7 @@ public class ClienteApiController {
         CriarClienteDTO criarClienteDTO = ClienteApiDtoMapper.requestDtoToCriarClienteDto(requestDto);
         ClienteDTO clienteDTO = clienteController.criarCliente(criarClienteDTO);
 
-        return ResponseEntity.ok(ClienteApiDtoMapper.clienteDtoToResponseDto(clienteDTO));
+        return ResponseEntity.status(HttpStatus.CREATED).body(ClienteApiDtoMapper.clienteDtoToResponseDto(clienteDTO));
     }
 
     @PutMapping("/update/{id}")

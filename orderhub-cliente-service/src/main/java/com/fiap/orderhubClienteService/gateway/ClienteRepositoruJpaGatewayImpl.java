@@ -48,13 +48,29 @@ public class ClienteRepositoruJpaGatewayImpl implements IClienteGateway {
 
     @Override
     public Cliente atualizar(Cliente cliente) throws ClienteNaoEncontradoException {
-        ClienteEntity clienteEntity = ClienteEntityMapper.domainToEntity(cliente);
-        clienteRepository.save(clienteEntity);
-        return ClienteEntityMapper.entityToDomain(clienteEntity);
+        Long id = cliente.getId();
+
+        ClienteEntity clienteEntity = clienteRepository.findById(id).orElseThrow(() -> new ClienteNaoEncontradoException("Cliente com id " + id + " nao foi encontrado"));
+
+        clienteEntity.setNome(cliente.getNome());
+        clienteEntity.setCpf(cliente.getCpf());
+        clienteEntity.setDataNascimento(cliente.getDataNascimento());
+        clienteEntity.setEndereco(cliente.getEndereco());
+        clienteEntity.setNumeroContato(cliente.getNumeroContato());
+        clienteEntity.setEmail(cliente.getEmail());
+        clienteEntity.setInfoPagamento(cliente.getInfoPagamento());
+
+        ClienteEntity clienteEntityAtualizado = clienteRepository.save(clienteEntity);
+
+        return ClienteEntityMapper.entityToDomain(clienteEntityAtualizado);
     }
 
     @Override
     public void remover(Long id) throws ClienteNaoEncontradoException {
+        if(!clienteRepository.existsById(id)){
+            throw new ClienteNaoEncontradoException("Cliente com id " + id + " nao foi encontrado");
+        }
+
         clienteRepository.deleteById(id);
     }
 

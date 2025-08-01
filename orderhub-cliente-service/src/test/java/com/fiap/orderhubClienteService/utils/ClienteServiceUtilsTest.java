@@ -63,4 +63,17 @@ public abstract class ClienteServiceUtilsTest {
                 "Cartao de Credito"
         );
     }
+
+    public static ClienteDTO criaClienteDto() {
+        return new ClienteDTO(
+                1L,
+                "Jorge",
+                "123.456.789-09",
+                "07/12/2015",
+                "Rua Teste, 123, Bairro XYZ",
+                "(99) 99999-9999",
+                "email@email.com",
+                "Cartao de Credito"
+        );
+    }
 }
